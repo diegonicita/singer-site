@@ -3,16 +3,16 @@
 // https://docs.astro.build/en/core-concepts/layouts/
 
 // Component Imports
-import MainHead from '../components/MainHead.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import MainHead from '../components/MainHead.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
 
 interface Props {
-	title?: string | undefined;
-	description?: string | undefined;
+	title?: string | undefined
+	description?: string | undefined
 }
 
-const { title, description } = Astro.props;
+const { title, description } = Astro.props
 ---
 
 <html lang="en">
@@ -28,7 +28,9 @@ const { title, description } = Astro.props;
 
 		<script>
 			// Add “loaded” class once the document has completely loaded.
-			addEventListener('load', () => document.documentElement.classList.add('loaded'));
+			addEventListener('load', () =>
+				document.documentElement.classList.add('loaded'),
+			)
 		</script>
 
 		<style>
@@ -43,7 +45,9 @@ const { title, description } = Astro.props;
 				--bg-blend-mode: darken;
 				--bg-image-aspect-ratio: 2.25;
 				--bg-scale: 1.68;
-				--bg-aspect-ratio: calc(var(--bg-image-aspect-ratio) / var(--bg-scale));
+				--bg-aspect-ratio: calc(
+					var(--bg-image-aspect-ratio) / var(--bg-scale)
+				);
 				--bg-gradient-size: calc(var(--bg-scale) * 100%);
 			}
 
@@ -88,17 +92,23 @@ const { title, description } = Astro.props;
 				}
 			}
 
-			.backgrounds {
+			.backgrounds {								
 				min-height: 100%;
 				isolation: isolate;
 				background:
-					/*noise*/ url('/assets/backgrounds/noise.png') top center/220px repeat,
-					/*footer*/ var(--bg-image-footer) bottom center/var(--bg-gradient-size) no-repeat,
-					/*header1*/ var(--bg-image-main-curves) top center/var(--bg-gradient-size) no-repeat,
-					/*header2*/ var(--bg-image-main) top center/var(--bg-gradient-size) no-repeat,
+					/*noise*/ url('/assets/backgrounds/noise.png') top
+						center/220px repeat,
+					/*footer*/ var(--bg-image-footer) bottom
+						center/var(--bg-gradient-size) no-repeat,
+					/*header1*/ var(--bg-image-main-curves) top
+						center/var(--bg-gradient-size) no-repeat,
+					/*header2*/ var(--bg-image-main) top
+						center/var(--bg-gradient-size) no-repeat,
 					/*base*/ var(--gray-999);
-				background-blend-mode: /*noise*/ overlay, /*footer*/ var(--bg-blend-mode),
-					/*header1*/ var(--bg-svg-blend-mode), /*header2*/ normal, /*base*/ normal;
+				background-blend-mode: /*noise*/ overlay,
+					/*footer*/ var(--bg-blend-mode),
+					/*header1*/ var(--bg-svg-blend-mode), /*header2*/ normal,
+					/*base*/ normal;
 			}
 			@media (forced-colors: active) {
 				/* Deactivate custom backgrounds for high contrast users. */

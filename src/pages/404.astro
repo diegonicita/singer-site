@@ -1,8 +1,14 @@
 ---
-import Hero from '../components/Hero.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import MiAvatar from '../components/MiAvatar.astro'
+import MiNavbar from '../components/MiNavbar.astro'
+import MiFooter from '../components/MiFooter.astro'
 ---
 
 <BaseLayout title="Not Found" description="404 Error — this page was not found">
+	<MiNavbar />
+	<MiAvatar />
 	<Hero title="Page Not Found" tagline="Not found" />
+	<MiFooter />
 </BaseLayout>
