@@ -1,10 +1,21 @@
+---
+import ThemeToggle from './ThemeToggle.astro'
+---
+
 <style>
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
+
+  .text-color {
+    color: var(--gray-0);
+  }
+  .mi-background-color {
+    background-color: var(--gray-800);
+  }
 </style>
 
-<div class="navbar bg-primary z-10">
+<div class="navbar z-10 mb-16">
   <div class="navbar-start">
     <div class="dropdown">
       <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -27,33 +38,39 @@
       >
         <li><a href="/">Home</a></li>
         <li>
-          <a>Videos</a>
+          <a class="text-color">Videos</a>
           <ul class="p-2">
             <li><a>Video 1</a></li>
             <li><a>Video 2</a></li>
           </ul>
         </li>
+        <li><a>Conciertos</a></li>
         <li><a>Discografia</a></li>
+        <li><a>Bio</a></li>
+        <li><a>Contacto</a></li>
       </ul>
     </div>
-    <a class="btn btn-ghost normal-case text-xl">Astrid Singer</a>
+    <a class="btn btn-ghost normal-case text-xl" href="/">Astrid Singer</a>
   </div>
   <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1">
+    <ul class="menu menu-horizontal px-1 text-color">
       <li><a href="/">Home</a></li>
       <li tabindex="0">
         <details>
-          <summary>Videos</summary>
-          <ul class="p-2 bg-primary">
+          <summary>Mis Videos</summary>
+          <ul class="p-2 mi-background-color">
             <li><a>Video 1</a></li>
             <li><a>Video 2</a></li>
           </ul>
         </details>
       </li>
+      <li><a>Conciertos</a></li>
       <li><a>Discografia</a></li>
+      <li><a>Bio</a></li>
+      <li><a>Contacto</a></li>
     </ul>
   </div>
-  <div class="navbar-end">
-    <a class="btn">Volver</a>
+  <div class="navbar-end mr-20">
+    <ThemeToggle />
   </div>
 </div>
