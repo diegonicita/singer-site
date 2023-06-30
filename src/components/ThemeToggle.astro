@@ -1,5 +1,5 @@
 ---
-import Icon from './Icon.astro';
+import Icon from './Icon.astro'
 ---
 
 <theme-toggle>
@@ -54,7 +54,8 @@ import Icon from './Icon.astro';
 	@media (prefers-reduced-motion: no-preference) {
 		.icon,
 		.icon.light::before {
-			transition: transform var(--theme-transition), color var(--theme-transition);
+			transition: transform var(--theme-transition),
+				color var(--theme-transition);
 		}
 	}
 
@@ -68,26 +69,28 @@ import Icon from './Icon.astro';
 <script>
 	class ThemeToggle extends HTMLElement {
 		constructor() {
-			super();
+			super()
 
-			const button = this.querySelector('button')!;
+			const button = this.querySelector('button')!
 
 			/** Set the theme to dark/light mode. */
 			const setTheme = (dark: boolean) => {
-				document.documentElement.classList[dark ? 'add' : 'remove']('theme-dark');
-				button.setAttribute('aria-pressed', String(dark));
-			};
+				document.documentElement.classList[dark ? 'add' : 'remove'](
+					'theme-dark',
+				)
+				button.setAttribute('aria-pressed', String(dark))
+			}
 
 			// Toggle the theme when a user clicks the button.
-			button.addEventListener('click', () => setTheme(!this.isDark()));
+			button.addEventListener('click', () => setTheme(!this.isDark()))
 
 			// Initialize button state to reflect current theme.
-			setTheme(this.isDark());
+			setTheme(this.isDark())
 		}
 
 		isDark() {
-			return document.documentElement.classList.contains('theme-dark');
+			return document.documentElement.classList.contains('theme-dark')
 		}
 	}
-	customElements.define('theme-toggle', ThemeToggle);
+	customElements.define('theme-toggle', ThemeToggle)
 </script>

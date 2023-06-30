@@ -31,19 +31,16 @@
 	--gradient-stop-2: var(--accent-regular);
 	--gradient-stop-3: var(--accent-dark);
 	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 150%);
-	--gradient-accent: linear-gradient(
-		150deg,
-		var(--gradient-stop-1),
-		var(--gradient-stop-2),
-		var(--gradient-stop-3)
-	);
-	--gradient-accent-orange: linear-gradient(
-		150deg,
-		#ca7879,
-		var(--accent-regular),
-		var(--accent-dark)
-	);
+	--gradient-accent: linear-gradient(150deg,
+			var(--gradient-stop-1),
+			var(--gradient-stop-2),
+			var(--gradient-stop-3));
+	--gradient-accent-orange: linear-gradient(150deg,
+			#ca7879,
+			var(--accent-regular),
+			var(--accent-dark));
 	--gradient-stroke: linear-gradient(180deg, var(--gray-900), var(--gray-700));
+	--gradient-capa: linear-gradient(180deg, rgb(10, 10, 17, 0.0) 95%,rgb(128, 128, 128, 0.8) 98%, rgb(255, 255, 255, 1) 100%);
 
 	/* Shadows */
 	--shadow-sm: 0px 6px 3px rgba(9, 11, 17, 0.01), 0px 4px 2px rgba(9, 11, 17, 0.01),
@@ -101,14 +98,12 @@
 
 	--gradient-stop-1: #4c11c6;
 	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 81%);
-	--gradient-accent-orange: linear-gradient(
-		150deg,
-		#ca7879,
-		var(--accent-regular),
-		var(--accent-light)
-	);
+	--gradient-accent-orange: linear-gradient(150deg,
+			#ca7879,
+			var(--accent-regular),
+			var(--accent-light));
 	--gradient-stroke: linear-gradient(180deg, var(--gray-600), var(--gray-800));
-
+	--gradient-capa: linear-gradient(0deg, rgb(10, 10, 17, 1), rgb(0, 0, 128, 0.05));
 	--shadow-sm: 0px 6px 3px rgba(255, 255, 255, 0.01), 0px 4px 2px rgba(255, 255, 255, 0.01),
 		0px 2px 2px rgba(255, 255, 255, 0.02), 0px 0px 1px rgba(255, 255, 255, 0.03);
 	--shadow-md: 0px 28px 11px rgba(255, 255, 255, 0.01), 0px 16px 10px rgba(255, 255, 255, 0.03),
@@ -117,13 +112,12 @@
 		0px 16px 16px rgba(255, 255, 255, 0.1), 0px 4px 9px rgba(255, 255, 255, 0.12);
 }
 
-html
-{	
+html {
 	height: 100%;
 	overflow-x: hidden;
 }
 
-body {	
+body {
 	height: 100%;
 	overflow-x: hidden;
 }
@@ -212,24 +206,31 @@ h5 {
 .gap-2 {
 	gap: 0.5rem;
 }
+
 .gap-4 {
 	gap: 1rem;
 }
+
 .gap-8 {
 	gap: 2rem;
 }
+
 .gap-10 {
 	gap: 2.5rem;
 }
+
 .gap-15 {
 	gap: 3.75rem;
 }
+
 .gap-20 {
 	gap: 5rem;
 }
+
 .gap-30 {
 	gap: 7.5rem;
 }
+
 .gap-48 {
 	gap: 12rem;
 }
@@ -238,24 +239,31 @@ h5 {
 	.lg\:gap-2 {
 		gap: 0.5rem;
 	}
+
 	.lg\:gap-4 {
 		gap: 1rem;
 	}
+
 	.lg\:gap-8 {
 		gap: 2rem;
 	}
+
 	.lg\:gap-10 {
 		gap: 2.5rem;
 	}
+
 	.lg\:gap-15 {
 		gap: 3.75rem;
 	}
+
 	.lg\:gap-20 {
 		gap: 5rem;
 	}
+
 	.lg\:gap-30 {
 		gap: 7.5rem;
 	}
+
 	.lg\:gap-48 {
 		gap: 12rem;
 	}
