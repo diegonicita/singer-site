@@ -16,6 +16,8 @@ import PortfolioPreview from '../components/PortfolioPreview.astro'
 import ContactCTA from '../components/ContactCTA.astro'
 import Skills from '../components/Skills.astro'
 import Nav from '../components/Nav.astro'
+import MiVideo from '../components/MiVideo.astro'
+import MiCapa from '../components/MiCapa.astro'
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
@@ -29,16 +31,14 @@ const projects = (await getCollection('work'))
 <BaseLayout>
 	<div class="stack gap-20 lg:gap-48">
 		<div class="parent">
+			<MiCapa />
+			<MiVideo />
 			<Nav />
-
 			<div class="wrapper stack gap-8 lg:gap-20">
-				<video class="video-bg" autoplay muted loop>
-					<source src="./assets/video-test.mp4" type="video/mp4" />
-				</video>
 				<header class="hero">
 					<Hero
 						title="Astrid Singer"
-						tagline="Violinista, Cantante, Influencer"
+						tagline="Violin showgirl, cantante, influencer. La chica del violin transparente."
 						align="start"
 					>
 						<div class="roles">
@@ -72,7 +72,7 @@ const projects = (await getCollection('work'))
 				</header>
 			</div>
 		</div>
-		<!-- <Skills /> -->
+		<!-- <Skills />  -->
 
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
@@ -140,23 +140,8 @@ const projects = (await getCollection('work'))
 		.parent {
 			position: relative;
 			overflow: hidden;
-			min-height: 120vh;
-			/* background: rgb(0,0,0,0.5)		 */
-			background-image: linear-gradient(
-				0deg,
-				rgb(10, 10, 17, 1),
-				rgb(0, 0, 128, 0.05)
-			);
-			background-blend-mode: darken;
-		}
-		.video-bg {
-			position: absolute;
-			top: 0;
-			left: 0;
-			min-width: 100%;
-			min-height: 100%;
-			z-index: -1;
-		}
+			min-height: 100vh;			
+		}		
 		.hero {
 			display: flex;
 			flex-direction: column;
@@ -214,7 +199,7 @@ const projects = (await getCollection('work'))
 
 			content: '';
 			position: absolute;
-			pointer-events: none;			
+			pointer-events: none;
 			left: 50%;
 			width: 100vw;
 			aspect-ratio: calc(2.25 / var(--bg-scale));

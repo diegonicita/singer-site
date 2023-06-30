@@ -11,6 +11,7 @@
 	--gray-600: #a3acc8;
 	--gray-700: #c3cadb;
 	--gray-800: #e3e6ee;
+	--gray-800-rgb: rgb(227, 230, 238, 0.80);
 	--gray-900: #f3f4f7;
 	--gray-999-basis: 0, 0%, 100%;
 	--gray-999_40: hsla(var(--gray-999-basis), 0.4);
@@ -84,6 +85,7 @@
 	--gray-600: #505d84;
 	--gray-700: #3d4663;
 	--gray-800: #283044;
+	--gray-800-rgb: rgb(40, 48, 68, 0.35);
 	--gray-900: #141925;
 	--gray-999-basis: 225, 31%, 5%;
 	--gray-999: #090b11;
