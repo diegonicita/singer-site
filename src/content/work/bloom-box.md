@@ -2,7 +2,7 @@
 title: Bloom Box
 publishDate: 2019-12-01 00:00:00
 img: /assets/stock-2.jpg
-video: https://www.youtube.com/embed/f5x4vpacHBw
+video: https://www.youtube.com/embed/p4QqMKe3rwY
 img_alt: A bright pink sheet of paper used to wrap flowers curves in front of rich blue background
 description: |
   We paired with a cutting-edge music API and a team of horticulturalists
