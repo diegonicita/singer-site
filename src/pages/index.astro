@@ -23,7 +23,6 @@ import WrapperGap8 from '../components/newComponents/Wrapper-gap-8.astro'
 import WrapperGap20 from '../components/newComponents/Wrapper-gap-20.astro'
 import MiHero from '../components/newComponents/MiHero.astro'
 
-
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
@@ -35,9 +34,9 @@ const projects = (await getCollection('work'))
 
 <BaseLayout>
 	<Container>
-		<div class="parent">
-			<MiCapa />			
-			<Nav />			
+		<div class="relative min-h-full overflow-hidden">
+			<Nav />
+			<MiCapa />									
 			<MiHero />
 			<MiVideo />
 		</div>
@@ -45,7 +44,7 @@ const projects = (await getCollection('work'))
 
 		<WrapperGap20>
 			<section class="section with-background with-cta">
-				<header class="section-header stack gap-2 lg:gap-4">
+				<header class="section-header flex flex-col gap-2 lg:gap-4">
 					<h3>Videos</h3>
 					<p>
 						Mira mis videos mas importantes y haz clic en el boton
@@ -74,7 +73,7 @@ const projects = (await getCollection('work'))
 			</section>
 
 			<section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
+				<header class="section-header flex flex-col gap-2 lg:gap-4">
 					<h3>Menciones</h3>
 					<p>
 						Mi trabajo ha sido mencionado en los sitios web mas

@@ -1,17 +1,17 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from 'astro:content'
 
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro'
 
-import ContactCTA from '../components/ContactCTA.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
-import Hero from '../components/Hero.astro';
-import Grid from '../components/Grid.astro';
+import ContactCTA from '../components/ContactCTA.astro'
+import PortfolioPreview from '../components/PortfolioPreview.astro'
+import Hero from '../components/Hero.astro'
+import Grid from '../components/Grid.astro'
 import MiNavbar from '../components/newComponents/MiNavbar.astro'
 
 const projects = (await getCollection('work')).sort(
-	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
-);
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+)
 ---
 
 <BaseLayout
@@ -19,8 +19,8 @@ const projects = (await getCollection('work')).sort(
 	description="Learn about a Singer's most recent videos"
 >
 	<MiNavbar />
-	<div class="stack gap-20">
-		<main class="wrapper stack gap-8">
+	<div class="flex flex-col gap-20">
+		<main class="w-full max-w-[83rem] m-auto p-6 flex flex-col gap-8">
 			<Hero
 				title="Videos"
 				tagline="Mira estos videos que estuvieron varias semanas en el top 10 de la revista Billboard"
