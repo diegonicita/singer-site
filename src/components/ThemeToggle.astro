@@ -78,6 +78,9 @@ import Icon from './Icon.astro'
 				document.documentElement.classList[dark ? 'add' : 'remove'](
 					'theme-dark',
 				)
+				document
+					.querySelector('html')
+					?.setAttribute('data-theme', String(dark?'dark':'cyberpunk'))
 				button.setAttribute('aria-pressed', String(dark))
 			}
 

@@ -1,0 +1,57 @@
+---
+import Pill from '../../components/Pill.astro'
+import Icon from '../../components/Icon.astro'
+---
+
+<style>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+    }
+</style>
+
+<div class="hero min-h-[50vh] justify-start items-end ml-2 sm:ml-24">
+    <div class="hero-content text-neutral-content">
+        <div class="max-w-md">
+            <h1 class="mb-5 text-6xl font-bold">Singer</h1>
+            <p class="mb-5 text-xl">Friend, singer, influencer.</p>
+            <div class="flex gap-2">
+                <Pill>
+                    <Icon icon="youtube-logo" size="1.33em" />Influencer
+                </Pill>
+                <Pill>
+                    <Icon icon="microphone-stage" size="1.33em" />Singer
+                </Pill>
+                <Pill>
+                    <Icon icon="microphone-stage" size="1.33em" />Musician
+                </Pill>
+            </div>
+            <div class="alert alert-success">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="stroke-current shrink-0 h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path></svg
+                >
+                <span>Your purchase has been confirmed!</span>
+            </div>
+            <button class="btn btn-lg">Large</button>
+            <button class="btn">Normal</button>
+            <button class="btn btn-sm">Small</button>
+            <button class="btn btn-xs">Tiny</button>
+        </div>
+    </div>
+</div>

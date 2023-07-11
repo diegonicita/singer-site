@@ -21,6 +21,8 @@ import MiCapa from '../components/newComponents/MiCapa.astro'
 import Container from '../components/newComponents/Container.astro'
 import WrapperGap8 from '../components/newComponents/Wrapper-gap-8.astro'
 import WrapperGap20 from '../components/newComponents/Wrapper-gap-20.astro'
+import MiHero from '../components/newComponents/MiHero.astro'
+
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
@@ -34,46 +36,10 @@ const projects = (await getCollection('work'))
 <BaseLayout>
 	<Container>
 		<div class="parent">
-			<MiCapa />
+			<MiCapa />			
+			<Nav />			
+			<MiHero />
 			<MiVideo />
-			<Nav />
-			<WrapperGap8>
-				<header class="hero">
-					<Hero
-						title="Singer"
-						tagline="Friend, singer, influencer."
-						align="start"
-					>
-						<div class="roles">
-							<Pill>
-								<Icon
-									icon="youtube-logo"
-									size="1.33em"
-								/>Influencer
-							</Pill>
-							<Pill>
-								<Icon
-									icon="microphone-stage"
-									size="1.33em"
-								/>Singer
-							</Pill>
-							<Pill>
-								<Icon
-									icon="microphone-stage"
-									size="1.33em"
-								/>Musician
-							</Pill>
-						</div>
-					</Hero>
-
-					<!-- <img
-						alt="Jeanine White smiling in a red plaid shirt and tortoise shell glasses"
-						width="480"
-						height="620"
-						src="/assets/portrait.jpg"
-					/> -->
-				</header>
-			</WrapperGap8>
 		</div>
 		<!-- <Skills />  -->
 
