@@ -22,6 +22,7 @@ import Container from '../components/newComponents/Container.astro'
 import WrapperGap8 from '../components/newComponents/Wrapper-gap-8.astro'
 import WrapperGap20 from '../components/newComponents/Wrapper-gap-20.astro'
 import MiHero from '../components/newComponents/MiHero.astro'
+import MiNavbar from '../components/newComponents/MiNavbar.astro'
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
@@ -35,7 +36,8 @@ const projects = (await getCollection('work'))
 <BaseLayout>
 	<Container>
 		<div class="relative min-h-full overflow-hidden">
-			<Nav />
+			<!-- <Nav /> -->
+			<MiNavbar />
 			<MiCapa />									
 			<MiHero />
 			<MiVideo />

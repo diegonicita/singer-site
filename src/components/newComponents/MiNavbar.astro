@@ -2,7 +2,7 @@
 import ThemeToggle from '../ThemeToggle.astro'
 ---
 
-<div class="navbar bg-base-100 z-10 mb-16">
+<div class="navbar bg-base-100">
   <div class="navbar-start">
     <div class="dropdown">
       <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -21,11 +21,11 @@ import ThemeToggle from '../ThemeToggle.astro'
       </label>
       <ul
         tabindex="0"
-        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-primary rounded-box w-52"
+        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
       >
         <li><a href="/">Home</a></li>
         <li>
-          <a class="text-color">Videos</a>
+          <a>Videos</a>
           <ul class="p-2">
             <li><a>Dancing Queen</a></li>
             <li><a>Gimme! Gimme! Gimme!</a></li>
@@ -42,12 +42,12 @@ import ThemeToggle from '../ThemeToggle.astro'
     <a class="btn btn-ghost normal-case text-xl" href="/">Singer</a>
   </div>
   <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1 text-color">
+    <ul class="menu menu-horizontal px-1">
       <li><a href="/">Home</a></li>
       <li tabindex="0">
         <details>
           <summary>Mis Videos</summary>
-          <ul class="p-2 mi-background-color">
+          <ul class="p-2">
             <li><a>Dancing Queen</a></li>
             <li><a>Gimme! Gimme! Gimme!</a></li>
             <li><a>Chiquitita</a></li>

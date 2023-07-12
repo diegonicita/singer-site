@@ -12,13 +12,14 @@ import Icon from './Icon.astro'
 
 <style>
 	button {
-		display: flex;
-		border: 0;
-		border-radius: 999rem;
-		padding: 0;
-		background-color: var(--gray-999);
-		box-shadow: inset 0 0 0 1px var(--accent-overlay);
-		cursor: pointer;
+		@apply flex bg-black shadow-sm shadow-neutral-focus border-2 border-neutral-500 rounded-full p-0 cursor-pointer;
+		/* display: flex; */
+		/* border: 0; */
+		/* border-radius: 999rem; */
+		/* padding: 0; */
+		/* background-color: var(--gray-999); */
+		/* box-shadow: inset 0 0 0 1px var(--accent-overlay); */
+		/* cursor: pointer; */
 	}
 
 	.icon {
@@ -33,11 +34,12 @@ import Icon from './Icon.astro'
 	}
 
 	.icon.light::before {
+		@apply bg-neutral-500;
 		content: '';
 		z-index: -1;
 		position: absolute;
 		inset: 0;
-		background-color: var(--accent-regular);
+		/* background-color: var(--accent-regular); */
 		border-radius: 999rem;
 	}
 
@@ -80,7 +82,7 @@ import Icon from './Icon.astro'
 				)
 				document
 					.querySelector('html')
-					?.setAttribute('data-theme', String(dark?'dark':'cyberpunk'))
+					?.setAttribute('data-theme', String(dark?'dark':'valentine'))
 				button.setAttribute('aria-pressed', String(dark))
 			}
 
