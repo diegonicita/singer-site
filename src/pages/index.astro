@@ -17,6 +17,7 @@ import ContactCTA from '../components/ContactCTA.astro'
 import Skills from '../components/Skills.astro'
 import Nav from '../components/Nav.astro'
 import MiVideo from '../components/newComponents/MiVideo.astro'
+import MiVideos from '../components/newComponents/MiVideos.astro'
 import MiCapa from '../components/newComponents/MiCapa.astro'
 import Container from '../components/newComponents/Container.astro'
 import WrapperGap8 from '../components/newComponents/Wrapper-gap-8.astro'
@@ -38,222 +39,205 @@ const projects = (await getCollection('work'))
 		<div class="relative min-h-full overflow-hidden">
 			<!-- <Nav /> -->
 			<MiNavbar />
-			<MiCapa />									
+			<MiCapa />
 			<MiHero />
 			<MiVideo />
 		</div>
 		<!-- <Skills />  -->
 
-		<WrapperGap20>
-			<section class="section with-background with-cta">
-				<header class="section-header flex flex-col gap-2 lg:gap-4">
-					<h3>Videos</h3>
-					<p>
-						Mira mis videos mas importantes y haz clic en el boton
-						Like.
-					</p>
-				</header>
+		<MiVideos>			
+			
+		</MiVideos>
 
-				<div class="gallery">
-					<Grid variant="offset">
-						{
-							projects.map((project) => (
-								<li>
-									<PortfolioPreview project={project} />
-								</li>
-							))
-						}
-					</Grid>
-				</div>
+		<Grid variant="small">
+			{
+				projects.map((project) => (
+					<li>
+						<PortfolioPreview project={project} />
+					</li>
+				))
+			}
+		</Grid>
 
-				<div class="cta">
-					<CallToAction href="/work/">
-						Ver Todos
-						<Icon icon="arrow-right" size="1.2em" />
-					</CallToAction>
-				</div>
-			</section>
 
-			<section class="section with-background bg-variant">
-				<header class="section-header flex flex-col gap-2 lg:gap-4">
-					<h3>Menciones</h3>
-					<p>
-						Mi trabajo ha sido mencionado en los sitios web mas
-						importantes del mundo
-					</p>
-				</header>
+		<section class="section with-background bg-variant">
+			<header class="section-header flex flex-col gap-2 lg:gap-4">
+				<h3>Menciones</h3>
+				<p>
+					Mi trabajo ha sido mencionado en los sitios web mas
+					importantes del mundo
+				</p>
+			</header>
 
-				<div class="gallery">
-					<Grid variant="small">
-						{
-							[
-								'Medium',
-								'BuzzFeed',
-								'The Next Web',
-								'awwwards.',
-								'TechCrunch',
-							].map((brand) => (
-								<li class="mention-card">
-									<p>{brand}</p>
-								</li>
-							))
-						}
-					</Grid>
-				</div>
-			</section>
-		</WrapperGap20>
-
-		<ContactCTA />
+			<div class="gallery">
+				<Grid variant="small">
+					{
+						[
+							'Medium',
+							'BuzzFeed',
+							'The Next Web',
+							'awwwards.',
+							'TechCrunch',
+						].map((brand) => (
+							<li class="mention-card">
+								<p>{brand}</p>
+							</li>
+						))
+					}
+				</Grid>
+			</div>
+		</section>
 	</Container>
 
-	<style>
-		.parent {
-			position: relative;
-			overflow: hidden;
-			min-height: 100vh;			
-		}		
+	<ContactCTA />
+</BaseLayout>
+
+<style>
+	.parent {
+		position: relative;
+		overflow: hidden;
+		min-height: 100vh;
+	}
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+		min-height: 50rem;
+	}
+
+	.roles {
+		display: none;
+	}
+
+	.hero img {
+		aspect-ratio: 5 / 4;
+		object-fit: cover;
+		object-position: top;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	@media (min-width: 50em) {
 		.hero {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			gap: 2rem;
-			min-height: 50rem;
+			display: grid;
+			grid-template-columns: 6fr 4fr;
+			padding-inline: 2.5rem;
+			gap: 3.75rem;
 		}
 
 		.roles {
-			display: none;
+			margin-top: 0.5rem;
+			display: flex;
+			gap: 0.5rem;
 		}
 
 		.hero img {
-			aspect-ratio: 5 / 4;
+			aspect-ratio: 3 / 4;
+			border-radius: 4.5rem;
 			object-fit: cover;
-			object-position: top;
-			border-radius: 1.5rem;
-			box-shadow: var(--shadow-md);
 		}
+	}
 
-		@media (min-width: 50em) {
-			.hero {
-				display: grid;
-				grid-template-columns: 6fr 4fr;
-				padding-inline: 2.5rem;
-				gap: 3.75rem;
-			}
+	/* ====================================================== */
 
-			.roles {
-				margin-top: 0.5rem;
-				display: flex;
-				gap: 0.5rem;
-			}
+	.section {
+		display: grid;
+		gap: 1rem;
+	}
 
-			.hero img {
-				aspect-ratio: 3 / 4;
-				border-radius: 4.5rem;
-				object-fit: cover;
-			}
-		}
+	.with-background {
+		position: relative;
+	}
 
-		/* ====================================================== */
+	.with-background::before {
+		--hero-bg: var(--bg-image-subtle-2);
 
+		content: '';
+		position: absolute;
+		pointer-events: none;
+		left: 50%;
+		width: 100vw;
+		aspect-ratio: calc(2.25 / var(--bg-scale));
+		top: 10%;
+		transform: translateY(-75%) translateX(-50%);
+		background: url('/assets/backgrounds/noise.png') top center/220px repeat,
+			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
+			var(--gray-999);
+		background-blend-mode: overlay, normal, normal, normal;
+		mix-blend-mode: var(--bg-blend-mode);
+		z-index: -1;
+	}
+
+	.with-background.bg-variant::before {
+		--hero-bg: var(--bg-image-subtle-1);
+	}
+
+	.section-header {
+		justify-self: center;
+		text-align: center;
+		max-width: 50ch;
+		font-size: var(--text-md);
+		color: var(--gray-300);
+	}
+
+	.section-header h3 {
+		font-size: var(--text-2xl);
+	}
+
+	@media (min-width: 50em) {
 		.section {
-			display: grid;
-			gap: 2rem;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
+			gap: 5rem;
 		}
 
-		.with-background {
-			position: relative;
-		}
-
-		.with-background::before {
-			--hero-bg: var(--bg-image-subtle-2);
-
-			content: '';
-			position: absolute;
-			pointer-events: none;
-			left: 50%;
-			width: 100vw;
-			aspect-ratio: calc(2.25 / var(--bg-scale));
-			top: 10%;
-			transform: translateY(-75%) translateX(-50%);
-			background: url('/assets/backgrounds/noise.png') top center/220px
-					repeat,
-				var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
-				var(--gray-999);
-			background-blend-mode: overlay, normal, normal, normal;
-			mix-blend-mode: var(--bg-blend-mode);
-			z-index: -1;
-		}
-
-		.with-background.bg-variant::before {
-			--hero-bg: var(--bg-image-subtle-1);
+		.section.with-cta {
+			grid-template-areas: 'header header header cta' 'gallery gallery gallery gallery';
 		}
 
 		.section-header {
-			justify-self: center;
-			text-align: center;
-			max-width: 50ch;
-			font-size: var(--text-md);
-			color: var(--gray-300);
+			grid-area: header;
+			font-size: var(--text-lg);
 		}
 
 		.section-header h3 {
-			font-size: var(--text-2xl);
+			font-size: var(--text-4xl);
 		}
 
-		@media (min-width: 50em) {
-			.section {
-				grid-template-columns: repeat(4, 1fr);
-				grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
-				gap: 5rem;
-			}
-
-			.section.with-cta {
-				grid-template-areas: 'header header header cta' 'gallery gallery gallery gallery';
-			}
-
-			.section-header {
-				grid-area: header;
-				font-size: var(--text-lg);
-			}
-
-			.section-header h3 {
-				font-size: var(--text-4xl);
-			}
-
-			.with-cta .section-header {
-				justify-self: flex-start;
-				text-align: left;
-			}
-
-			.gallery {
-				grid-area: gallery;
-			}
-
-			.cta {
-				grid-area: cta;
-			}
+		.with-cta .section-header {
+			justify-self: flex-start;
+			text-align: left;
 		}
 
-		/* ====================================================== */
+		.gallery {
+			grid-area: gallery;
+		}
 
+		.cta {
+			grid-area: cta;
+		}
+	}
+
+	/* ====================================================== */
+
+	.mention-card {
+		display: flex;
+		height: 7rem;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border: 1px solid var(--gray-800);
+		border-radius: 1.5rem;
+		color: var(--gray-300);
+		background: var(--gradient-subtle);
+		box-shadow: var(--shadow-sm);
+	}
+
+	@media (min-width: 50em) {
 		.mention-card {
-			display: flex;
-			height: 7rem;
-			justify-content: center;
-			align-items: center;
-			text-align: center;
-			border: 1px solid var(--gray-800);
 			border-radius: 1.5rem;
-			color: var(--gray-300);
-			background: var(--gradient-subtle);
-			box-shadow: var(--shadow-sm);
+			height: 9.5rem;
 		}
-
-		@media (min-width: 50em) {
-			.mention-card {
-				border-radius: 1.5rem;
-				height: 9.5rem;
-			}
-		}
-	</style>
-</BaseLayout>
+	}
+</style>
